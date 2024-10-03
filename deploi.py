@@ -16,6 +16,7 @@ model_choice = st.sidebar.selectbox("Choisissez un modèle :", list(model_files.
 model_filename = model_files[model_choice]
 try:
     model = joblib.load(model_filename)
+    
     st.sidebar.success(f"Modèle {model_choice} chargé avec succès.")
 except FileNotFoundError:
     st.sidebar.error(f"Le fichier du modèle {model_choice} est introuvable.")
